@@ -123,6 +123,7 @@
                         <property name="label" translatable="yes">Delete Virtual Machine</property>
                         <property name="use-underline">True</property>
                         <property name="icon-name">edit-delete</property>
+                        <signal name="clicked" handler="on_vmDelete_clicked" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -165,6 +166,7 @@
                         <property name="label" translatable="yes">Start Introspection Tools for Selected VM</property>
                         <property name="use-underline">True</property>
                         <property name="icon-name">edit-find</property>
+                        <signal name="clicked" handler="on_introspectionStart_clicked" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -220,6 +222,7 @@
                               <object class="GtkEntry" id="NameEntry">
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
+                                <signal name="changed" handler="on_NameEntry_changed" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -256,6 +259,7 @@
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
                                 <property name="draw-indicator">True</property>
+                                <signal name="toggled" handler="on_preinstallCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -294,6 +298,7 @@
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
                                 <property name="draw-indicator">True</property>
+                                <signal name="toggled" handler="on_introspecChec_toggled" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -333,6 +338,7 @@
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
                                 <property name="draw-indicator">True</property>
+                                <signal name="toggled" handler="on_nographicsCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -372,6 +378,7 @@
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
                                 <property name="draw-indicator">True</property>
+                                <signal name="toggled" handler="on_spiceCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -422,6 +429,7 @@
                                 <property name="receives-default">False</property>
                                 <property name="margin-start">5</property>
                                 <property name="draw-indicator">True</property>
+                                <signal name="toggled" handler="on_coresCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -463,6 +471,7 @@
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
                                 <property name="draw-indicator">True</property>
+                                <signal name="toggled" handler="on_socketsCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -501,6 +510,7 @@
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
                                 <property name="draw-indicator">True</property>
+                                <signal name="toggled" handler="on_threadsCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -575,6 +585,7 @@
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
                                 <property name="draw-indicator">True</property>
+                                <signal name="toggled" handler="on_memoryCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -675,6 +686,7 @@
                         <property name="label" translatable="yes">Delete Virtual Machine</property>
                         <property name="use-underline">True</property>
                         <property name="icon-name">dialog-close</property>
+                        <signal name="clicked" handler="on_vmDelete1_clicked" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
