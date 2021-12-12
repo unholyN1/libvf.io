@@ -41,6 +41,7 @@
             <property name="wide-handle">True</property>
             <child>
               <object class="GtkBox" id="vmControl">
+                <property name="name">vmControl</property>
                 <property name="width-request">100</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
@@ -54,25 +55,166 @@
                     <property name="label-xalign">0</property>
                     <property name="shadow-type">none</property>
                     <child>
-                      <object class="GtkMenuBar" id="vmList">
+                      <object class="GtkScrolledWindow" id="vmScrollWindow">
                         <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="pack-direction">ttb</property>
-                        <property name="child-pack-direction">rtl</property>
+                        <property name="can-focus">True</property>
+                        <property name="shadow-type">in</property>
                         <child>
-                          <object class="GtkMenuItem">
+                          <object class="GtkViewport">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">VM1</property>
-                            <property name="use-underline">True</property>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkMenuItem">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">VM2</property>
-                            <property name="use-underline">True</property>
+                            <child>
+                              <object class="GtkMenuBar">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <child>
+                                  <object class="GtkMenuItem">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="label" translatable="yes">_File</property>
+                                    <property name="use-underline">True</property>
+                                    <child type="submenu">
+                                      <object class="GtkMenu">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <child>
+                                          <object class="GtkImageMenuItem">
+                                            <property name="label">gtk-new</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="use-stock">True</property>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkImageMenuItem">
+                                            <property name="label">gtk-open</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="use-stock">True</property>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkImageMenuItem">
+                                            <property name="label">gtk-save</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="use-stock">True</property>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkImageMenuItem">
+                                            <property name="label">gtk-save-as</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="use-stock">True</property>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkSeparatorMenuItem">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkImageMenuItem">
+                                            <property name="label">gtk-quit</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="use-stock">True</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkMenuItem">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="label" translatable="yes">_Edit</property>
+                                    <property name="use-underline">True</property>
+                                    <child type="submenu">
+                                      <object class="GtkMenu">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <child>
+                                          <object class="GtkImageMenuItem">
+                                            <property name="label">gtk-cut</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="use-stock">True</property>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkImageMenuItem">
+                                            <property name="label">gtk-copy</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="use-stock">True</property>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkImageMenuItem">
+                                            <property name="label">gtk-paste</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="use-stock">True</property>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkImageMenuItem">
+                                            <property name="label">gtk-delete</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="use-stock">True</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkMenuItem">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="label" translatable="yes">_View</property>
+                                    <property name="use-underline">True</property>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkMenuItem">
+                                    <property name="visible">True</property>
+                                    <property name="can-focus">False</property>
+                                    <property name="label" translatable="yes">_Help</property>
+                                    <property name="use-underline">True</property>
+                                    <child type="submenu">
+                                      <object class="GtkMenu">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <child>
+                                          <object class="GtkImageMenuItem">
+                                            <property name="label">gtk-about</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="use-stock">True</property>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
                           </object>
                         </child>
                       </object>
@@ -239,14 +381,16 @@
                         <child>
                           <!-- n-columns=2 n-rows=10 -->
                           <object class="GtkGrid">
-                            <property name="width-request">100</property>
+                            <property name="width-request">120</property>
                             <property name="height-request">80</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
+                            <property name="row-homogeneous">True</property>
                             <child>
                               <object class="GtkLabel" id="PreinstallLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="halign">start</property>
                                 <property name="margin-end">5</property>
                                 <property name="label" translatable="yes">PreInstall:</property>
                               </object>
@@ -260,6 +404,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
+                                <property name="halign">end</property>
                                 <property name="draw-indicator">True</property>
                                 <signal name="toggled" handler="on_preinstallCheck_toggled" swapped="no"/>
                               </object>
@@ -272,7 +417,7 @@
                               <object class="GtkLabel" id="introspecLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="margin-start">12</property>
+                                <property name="halign">start</property>
                                 <property name="margin-end">5</property>
                                 <property name="label" translatable="yes">startIntro:</property>
                               </object>
@@ -286,6 +431,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
+                                <property name="halign">end</property>
                                 <property name="draw-indicator">True</property>
                                 <signal name="toggled" handler="on_introspecChec_toggled" swapped="no"/>
                               </object>
@@ -298,7 +444,7 @@
                               <object class="GtkLabel" id="noGraphicsLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="margin-start">5</property>
+                                <property name="halign">start</property>
                                 <property name="margin-end">5</property>
                                 <property name="label" translatable="yes">nographics:</property>
                                 <property name="xalign">0.5</property>
@@ -313,6 +459,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
+                                <property name="halign">end</property>
                                 <property name="draw-indicator">True</property>
                                 <signal name="toggled" handler="on_nographicsCheck_toggled" swapped="no"/>
                               </object>
@@ -325,7 +472,7 @@
                               <object class="GtkLabel" id="spiceLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="margin-start">41</property>
+                                <property name="halign">start</property>
                                 <property name="margin-end">5</property>
                                 <property name="label" translatable="yes">spice:</property>
                                 <property name="xalign">0.5</property>
@@ -340,6 +487,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
+                                <property name="halign">end</property>
                                 <property name="draw-indicator">True</property>
                                 <signal name="toggled" handler="on_spiceCheck_toggled" swapped="no"/>
                               </object>
@@ -352,7 +500,7 @@
                               <object class="GtkLabel" id="noCopyLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="margin-start">10</property>
+                                <property name="halign">start</property>
                                 <property name="margin-end">5</property>
                                 <property name="label" translatable="yes">No Copy:</property>
                               </object>
@@ -366,6 +514,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
+                                <property name="halign">end</property>
                                 <property name="draw-indicator">True</property>
                               </object>
                               <packing>
@@ -377,6 +526,7 @@
                               <object class="GtkLabel" id="cpuLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="halign">start</property>
                                 <property name="label" translatable="yes">CPU:</property>
                               </object>
                               <packing>
@@ -388,7 +538,7 @@
                               <object class="GtkLabel" id="coresLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="margin-start">14</property>
+                                <property name="halign">start</property>
                                 <property name="label" translatable="yes">Cores:</property>
                                 <property name="xalign">0.5</property>
                               </object>
@@ -402,6 +552,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
+                                <property name="halign">end</property>
                                 <property name="margin-start">5</property>
                                 <property name="draw-indicator">True</property>
                                 <signal name="toggled" handler="on_coresCheck_toggled" swapped="no"/>
@@ -415,7 +566,7 @@
                               <object class="GtkLabel" id="socketsLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="margin-start">2</property>
+                                <property name="halign">start</property>
                                 <property name="margin-end">5</property>
                                 <property name="label" translatable="yes">Sockets:</property>
                                 <property name="xalign">0.5</property>
@@ -430,6 +581,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
+                                <property name="halign">end</property>
                                 <property name="draw-indicator">True</property>
                                 <signal name="toggled" handler="on_socketsCheck_toggled" swapped="no"/>
                               </object>
@@ -442,6 +594,7 @@
                               <object class="GtkLabel" id="threadsLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="halign">start</property>
                                 <property name="margin-end">5</property>
                                 <property name="label" translatable="yes">Threads:</property>
                                 <property name="xalign">0.5</property>
@@ -456,6 +609,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
+                                <property name="halign">end</property>
                                 <property name="draw-indicator">True</property>
                                 <signal name="toggled" handler="on_threadsCheck_toggled" swapped="no"/>
                               </object>
@@ -468,7 +622,7 @@
                               <object class="GtkLabel" id="memoryLabel">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="margin-start">10</property>
+                                <property name="halign">start</property>
                                 <property name="margin-end">5</property>
                                 <property name="label" translatable="yes">Memory:</property>
                               </object>
@@ -482,6 +636,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <property name="receives-default">False</property>
+                                <property name="halign">end</property>
                                 <property name="draw-indicator">True</property>
                                 <signal name="toggled" handler="on_memoryCheck_toggled" swapped="no"/>
                               </object>
