@@ -237,7 +237,10 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="PreinstallBox">
+                          <!-- n-columns=2 n-rows=10 -->
+                          <object class="GtkGrid">
+                            <property name="width-request">100</property>
+                            <property name="height-request">80</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <child>
@@ -248,9 +251,8 @@
                                 <property name="label" translatable="yes">PreInstall:</property>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">0</property>
                               </packing>
                             </child>
                             <child>
@@ -262,22 +264,10 @@
                                 <signal name="toggled" handler="on_preinstallCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">0</property>
                               </packing>
                             </child>
-                          </object>
-                          <packing>
-                            <property name="x">10</property>
-                            <property name="y">50</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox" id="introspecBox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="margin-start">20</property>
                             <child>
                               <object class="GtkLabel" id="introspecLabel">
                                 <property name="visible">True</property>
@@ -287,9 +277,8 @@
                                 <property name="label" translatable="yes">startIntro:</property>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">1</property>
                               </packing>
                             </child>
                             <child>
@@ -301,22 +290,10 @@
                                 <signal name="toggled" handler="on_introspecChec_toggled" swapped="no"/>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">1</property>
                               </packing>
                             </child>
-                          </object>
-                          <packing>
-                            <property name="x">10</property>
-                            <property name="y">70</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox" id="noGraphicsBox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="margin-start">20</property>
                             <child>
                               <object class="GtkLabel" id="noGraphicsLabel">
                                 <property name="visible">True</property>
@@ -327,9 +304,8 @@
                                 <property name="xalign">0.5</property>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">2</property>
                               </packing>
                             </child>
                             <child>
@@ -341,22 +317,10 @@
                                 <signal name="toggled" handler="on_nographicsCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">2</property>
                               </packing>
                             </child>
-                          </object>
-                          <packing>
-                            <property name="x">10</property>
-                            <property name="y">90</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox" id="spiceBox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="margin-start">20</property>
                             <child>
                               <object class="GtkLabel" id="spiceLabel">
                                 <property name="visible">True</property>
@@ -367,9 +331,8 @@
                                 <property name="xalign">0.5</property>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">3</property>
                               </packing>
                             </child>
                             <child>
@@ -381,33 +344,46 @@
                                 <signal name="toggled" handler="on_spiceCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">3</property>
                               </packing>
                             </child>
-                          </object>
-                          <packing>
-                            <property name="x">10</property>
-                            <property name="y">110</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkLabel" id="cpuLabel">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">CPU:</property>
-                          </object>
-                          <packing>
-                            <property name="x">10</property>
-                            <property name="y">150</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox" id="coresBox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="margin-start">20</property>
+                            <child>
+                              <object class="GtkLabel" id="noCopyLabel">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="margin-start">10</property>
+                                <property name="margin-end">5</property>
+                                <property name="label" translatable="yes">No Copy:</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">4</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkCheckButton" id="noCopyCheck">
+                                <property name="visible">True</property>
+                                <property name="can-focus">True</property>
+                                <property name="receives-default">False</property>
+                                <property name="draw-indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">4</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="cpuLabel">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="label" translatable="yes">CPU:</property>
+                              </object>
+                              <packing>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">5</property>
+                              </packing>
+                            </child>
                             <child>
                               <object class="GtkLabel" id="coresLabel">
                                 <property name="visible">True</property>
@@ -417,9 +393,8 @@
                                 <property name="xalign">0.5</property>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">6</property>
                               </packing>
                             </child>
                             <child>
@@ -432,24 +407,10 @@
                                 <signal name="toggled" handler="on_coresCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">6</property>
                               </packing>
                             </child>
-                          </object>
-                          <packing>
-                            <property name="x">10</property>
-                            <property name="y">170</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox" id="SocketsBox">
-                            <property name="width-request">-1</property>
-                            <property name="height-request">-1</property>
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="margin-start">20</property>
                             <child>
                               <object class="GtkLabel" id="socketsLabel">
                                 <property name="visible">True</property>
@@ -460,9 +421,8 @@
                                 <property name="xalign">0.5</property>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">7</property>
                               </packing>
                             </child>
                             <child>
@@ -474,22 +434,10 @@
                                 <signal name="toggled" handler="on_socketsCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">7</property>
                               </packing>
                             </child>
-                          </object>
-                          <packing>
-                            <property name="x">10</property>
-                            <property name="y">190</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox" id="threadsBox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="margin-start">20</property>
                             <child>
                               <object class="GtkLabel" id="threadsLabel">
                                 <property name="visible">True</property>
@@ -499,9 +447,8 @@
                                 <property name="xalign">0.5</property>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">8</property>
                               </packing>
                             </child>
                             <child>
@@ -513,58 +460,10 @@
                                 <signal name="toggled" handler="on_threadsCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">8</property>
                               </packing>
                             </child>
-                          </object>
-                          <packing>
-                            <property name="x">10</property>
-                            <property name="y">210</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox" id="noCopyBox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <child>
-                              <object class="GtkLabel" id="noCopyLabel">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="margin-start">10</property>
-                                <property name="margin-end">5</property>
-                                <property name="label" translatable="yes">No Copy:</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkCheckButton" id="noCopyCheck">
-                                <property name="visible">True</property>
-                                <property name="can-focus">True</property>
-                                <property name="receives-default">False</property>
-                                <property name="draw-indicator">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="x">10</property>
-                            <property name="y">130</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkBox" id="memoryBox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
                             <child>
                               <object class="GtkLabel" id="memoryLabel">
                                 <property name="visible">True</property>
@@ -574,9 +473,8 @@
                                 <property name="label" translatable="yes">Memory:</property>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
+                                <property name="left-attach">0</property>
+                                <property name="top-attach">9</property>
                               </packing>
                             </child>
                             <child>
@@ -588,15 +486,30 @@
                                 <signal name="toggled" handler="on_memoryCheck_toggled" swapped="no"/>
                               </object>
                               <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
+                                <property name="left-attach">1</property>
+                                <property name="top-attach">9</property>
                               </packing>
+                            </child>
+                            <child>
+                              <placeholder/>
                             </child>
                           </object>
                           <packing>
-                            <property name="x">13</property>
-                            <property name="y">234</property>
+                            <property name="x">5</property>
+                            <property name="y">50</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSeparator">
+                            <property name="width-request">392</property>
+                            <property name="height-request">3</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="x">1</property>
+                            <property name="y">45</property>
                           </packing>
                         </child>
                       </object>
