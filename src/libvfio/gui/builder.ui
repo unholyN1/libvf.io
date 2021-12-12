@@ -67,11 +67,12 @@
                               <object class="GtkMenuBar">
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
+                                <property name="pack-direction">ttb</property>
                                 <child>
-                                  <object class="GtkMenuItem">
+                                  <object class="GtkMenuItem" id="vm1Item">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">_File</property>
+                                    <property name="label" translatable="yes">VM1</property>
                                     <property name="use-underline">True</property>
                                     <child type="submenu">
                                       <object class="GtkMenu">
@@ -133,10 +134,10 @@
                                   </object>
                                 </child>
                                 <child>
-                                  <object class="GtkMenuItem">
+                                  <object class="GtkMenuItem" id="vm2_item">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">_Edit</property>
+                                    <property name="label" translatable="yes">VM2</property>
                                     <property name="use-underline">True</property>
                                     <child type="submenu">
                                       <object class="GtkMenu">
@@ -172,37 +173,6 @@
                                         <child>
                                           <object class="GtkImageMenuItem">
                                             <property name="label">gtk-delete</property>
-                                            <property name="visible">True</property>
-                                            <property name="can-focus">False</property>
-                                            <property name="use-underline">True</property>
-                                            <property name="use-stock">True</property>
-                                          </object>
-                                        </child>
-                                      </object>
-                                    </child>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkMenuItem">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">_View</property>
-                                    <property name="use-underline">True</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkMenuItem">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="label" translatable="yes">_Help</property>
-                                    <property name="use-underline">True</property>
-                                    <child type="submenu">
-                                      <object class="GtkMenu">
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">False</property>
-                                        <child>
-                                          <object class="GtkImageMenuItem">
-                                            <property name="label">gtk-about</property>
                                             <property name="visible">True</property>
                                             <property name="can-focus">False</property>
                                             <property name="use-underline">True</property>
@@ -251,6 +221,7 @@
                         <property name="label" translatable="yes">Create new Virtual Machine</property>
                         <property name="use-underline">True</property>
                         <property name="icon-name">list-add</property>
+                        <signal name="clicked" handler="on_vmAdd_clicked" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -280,6 +251,7 @@
                         <property name="label" translatable="yes">Start Virtual Machine</property>
                         <property name="use-underline">True</property>
                         <property name="icon-name">media-playback-start</property>
+                        <signal name="clicked" handler="on_vmStart_clicked" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
