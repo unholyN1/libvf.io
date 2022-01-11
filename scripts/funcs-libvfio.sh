@@ -121,6 +121,7 @@ function add_boot_param() {
   fi
   # GRUB
   case $distro in 
+  #not everyone uses grub?
     "Fedora")	sudo grub2-mkconfig -o /boot/grub2/grub.cfg;;
     "Ubuntu")	sudo update-grub;;
     "Arch")	sudo grub-mkconfig -o /boot/grub/grub.cfg;;
