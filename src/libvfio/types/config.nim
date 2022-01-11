@@ -14,22 +14,23 @@ import connectivity, hardware, environment, process
 
 type
   CommandEnum* = enum                ## Different first layer commands.
-    ceLs = "ls",
-    ceStart = "start",
-    ceCreate = "create",
-    ceIntrospect = "introspect"
-    ceStop = "stop",
-    cePs = "ps",
-    ceDeploy = "deploy",
-    ceUndeploy = "undeploy"
+    ceHelp = "help",                 ## Help dialog.
+    ceLs = "ls",                     ## List kernels, states, and apps.
+    ceStart = "start",               ## Start a VM.
+    ceCreate = "create",             ## Create a VM.
+    ceIntrospect = "introspect"      ## Introspect a VM.
+    ceStop = "stop",                 ## Stop a VM.
+    cePs = "ps",                     ## List running VMs.
+    ceDeploy = "deploy",             ## Deploy arcd's resources to disk.
+    ceUndeploy = "undeploy"          ## Undeploy arcd's resources from disk.
 
-  IntrospectEnum* = enum             ## Available introspection tools
-    isNone = "none",
-    isLookingGlass = "looking-glass"
+  IntrospectEnum* = enum             ## Available introspection tools.
+    isNone = "none",                 ## No introspection.
+    isLookingGlass = "looking-glass" ## Looking Glass IVSHMEM Frame Relay
 
   RequestedGpuType* = enum           ## Types of GPUs we support.
-    rgSRIOVGpu = "sriovdev",
-    rgMdevGpu = "sysfsdev"
+    rgSRIOVGpu = "sriovdev",         ## PCI address based mediated device functionality.
+    rgMdevGpu = "sysfsdev"           ## VFIO-Mdev based mediated device functionality.
 
   RequestedGpu* = object             ## Object to request a GPU.
     maxVRam*: int                    ## Maximum acceptable vRAM.
@@ -134,6 +135,8 @@ proc getCommandLine*(): CommandLineArguments =
   ## Side effects - Reads the command line arguments.
   func getCommand(key: string): Option[CommandEnum] =
     case toLowerAscii(key)
+    of $ceHelp:
+      some(ceHelp)
     of $ceIntrospect:
       some(ceIntrospect)
     of $ceCreate:
@@ -247,7 +250,7 @@ proc getConfigFile*(args: CommandLineArguments): Config =
       close(fs)
     except:
       echo("Error reading config ", s, " or ", prevRoot, ": ", getCurrentExceptionMsg())
-      result = prev
+      quit(1)
 
   proc replaceConfig(d: Config, config: Option[string]): Config =
     # TODO: Add ability to only pass in from shells in the root.
@@ -257,14 +260,6 @@ proc getConfigFile*(args: CommandLineArguments): Config =
       result = d
 
   result = DefaultConfig
-
-  # If a user defined initial configuration is built.
-  if fileExists("/etc/arc.yaml") and not args.noconfig:
-    result = readConfig("/etc/arc.yaml", getHomeDir() / ".local" / "libvf.io", result)
-
-  let userConfig = getHomeDir() / ".config" / "arc" / "arc.yaml"
-  if fileExists(userConfig) and not args.noconfig:
-    result = readConfig(userConfig, getHomeDir() / ".local" / "libvf.io", result)
 
   # If no file was passed in.
   if isSome(args.config):

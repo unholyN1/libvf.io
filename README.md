@@ -8,7 +8,7 @@ Join the LibVF.IO community here, we'd love to hear your suggestions or help you
 
 Discord: https://discord.gg/Rb9K9DYxKK
 
-Matrix: #libvf.io:arcrealityinc.com
+Matrix: https://matrix.to/#/#LibVF.IO:OpenMdev
 
 # Documentation
 
@@ -17,10 +17,8 @@ https://arccompute.com/blog/libvfio-commodity-gpu-multiplexing/
 
 The following pages provide a basic introduction to LibVF.IO:
 
-1. [Deploy](docs/deployment.md)
-2. [Using](docs/using.md)
-3. [Undeploy](docs/undeployment.md)
-4. [Example](docs/example.md)
+1. [Using](docs/using.md)
+2. [Example](docs/example.md)
 
 # Release Features
 
@@ -40,9 +38,8 @@ The following pages provide a basic introduction to LibVF.IO:
 
 # Future Features
 
-1. Wider OS support for automated installation
-2. Snapshot + Block diff copy
-3. Runtime hot-plugging/hot-unplugging
+1. Snapshot + Block diff copy
+2. Runtime hot-plugging/hot-unplugging
 
 # License
 
