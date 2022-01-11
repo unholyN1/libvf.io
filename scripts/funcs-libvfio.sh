@@ -245,8 +245,8 @@ function install_lookingglass() {
  # Compile & install Looking Glass sources
   set_sandbox_dir
   cd LookingGlass
-  mkdir client/build
-  mkdir host/build
+  mkdir -p client/build
+  mkdir -p host/build
   cd client/build
   cmake ../
   make
