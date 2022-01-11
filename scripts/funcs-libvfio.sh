@@ -83,9 +83,9 @@ function distro_update() {
     "Fedora")	sudo dnf upgrade -y;;
     "Ubuntu")	sudo apt update -y; sudo apt upgrade -y;;
     "Arch")     echo
-                echo "Arch users will require yay to update Arch and install libvf.io dependencies."
+                echo "Arch don't need yay to update Arch and install libvf.io dependencies."
                 read -p "Press 'Enter' key to acknowledge and proceed..."
-    		yay -Syu;;
+    		pacman -Syu;;
     *)		echo $case_dist_msg;;
   esac
 }
@@ -103,7 +103,7 @@ function add_depen() {
   case $distro in
     "Fedora") 	sudo dnf install -y nsis plasma-wayland-protocols dkms mingw64-gcc $lookingglass_dep_fedora qemu patch kernel-devel openssl;;
     "Ubuntu")	sudo apt install -y mokutil dkms libglvnd-dev curl gcc cmake fonts-freefont-ttf libegl-dev libgl-dev libfontconfig1-dev libgmp-dev libspice-protocol-dev make nettle-dev pkg-config python3 python3-pip binutils-dev qemu qemu-utils qemu-kvm libx11-dev libxfixes-dev libxi-dev libxinerama-dev libxss-dev libwayland-bin libwayland-dev wayland-protocols gcc-mingw-w64-x86-64 nsis mdevctl git libpulse-dev libasound2-dev;;
-    "Arch")	yay -S "nsis" mdevctl base-devel libxss libglvnd mingw-w64-gcc curl spice-protocol wayland-protocols cdrkit mokutil dkms make cmake gcc nettle python3 qemu alsa-lib libpulse;;
+    "Arch")	;;
      *)		echo $case_dist_msg;;
   esac
 }
