@@ -85,7 +85,7 @@ function distro_update() {
     "Arch")     echo
                 echo "Arch doesn't need yay. Pacman works. to update Arch and install libvf.io dependencies."
                 read -p "Press 'Enter' key to acknowledge and proceed..."
-    		pacman -Syu;;
+    		sudo pacman -Syu;;
     *)		echo $case_dist_msg;;
   esac
 }
