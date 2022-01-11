@@ -228,7 +228,7 @@ function install_choosenim() {
 function install_libvfio() {
   # Compile and install libvf.io
   cd $current_path
-  nimble install -y --verbose
+  sudo nimble install -y --verbose
   rm ./arcd
 }
 
@@ -266,7 +266,7 @@ function get_scream() {
   git clone https://github.com/duncanthrax/scream/
   cd scream/Receivers/unix
   # Compile & install scream sources
-  mkdir build && cd build
+  mkdir -p build && cd build
   cmake ..
   make
   sudo make install
