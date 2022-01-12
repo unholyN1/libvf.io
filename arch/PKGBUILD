@@ -1,0 +1,41 @@
+
+_pkgname=libvfio-git
+pkgname=$_pkgname
+#need version numbers from git. can creation func to grab version
+pkgver=1
+pkgrel=1
+pkgdesc="A vendor neutral GPU multiplexing tool driven by YAML & VFIO"
+arch=('i686' 'x86_64')
+url="https://libvf.io"
+license=('AGPL')
+#need to remove arch dependencies from shell script
+#we really don't want to do a full package reinstall on installation. but the script forces it for now
+depends=('mdevctl' 'libxss' 'libglvnd' 'spice-protocol' 'wayland-protocols' 'dkms' 'cdrkit' 'mokutil' 'nettle' 'python3' 'qemu' 'alsa-lib' 'libpulse' 'curl')
+#i make no promises the makedepends are all correct yet. be careful if asked to remove
+makedepends=('cmake' 'mingw-w64-gcc')
+optdepends=('nvidia-merged')
+provides=('libvfio')
+conflicts=('libvfio')
+source=('git+https://github.com/unholyN1/libvf.io.git')
+sha256sums=('SKIP')
+
+prepare() {
+  #anything to unpack and get ready
+  echo 'blank'
+}
+
+build() {
+  cd $srcdir/libvf.io/
+  ./scripts/install-libvfio.sh
+}
+
+check() {
+	#tests?
+	echo 'blank'
+}
+
+package() {
+    #need to move install targets from shell script to here for packaging ownership
+    #make install targets
+    echo 'blank'
+}
