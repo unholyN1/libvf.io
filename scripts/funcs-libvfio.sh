@@ -85,7 +85,7 @@ function distro_update() {
     "Arch")     echo
                 echo "Arch doesn't need yay. Pacman works. to update Arch and install libvf.io dependencies."
                 read -p "Press 'Enter' key to acknowledge and proceed..."
-    		sudo pacman -Syu;;
+    		pacman -Syu;;
     *)		echo $case_dist_msg;;
   esac
 }
@@ -228,7 +228,7 @@ function install_choosenim() {
 function install_libvfio() {
   # Compile and install libvf.io
   cd $current_path
-  sudo nimble install -y --verbose
+  nimble install -y --verbose
   rm ./arcd
 }
 
